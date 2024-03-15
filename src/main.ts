@@ -16,6 +16,7 @@ import { UniverSheetsFormulaPlugin } from "@univerjs/sheets-formula";
 import { UniverSheetsNumfmtPlugin } from "@univerjs/sheets-numfmt";
 import { UniverSheetsUIPlugin } from "@univerjs/sheets-ui";
 import { UniverUIPlugin } from "@univerjs/ui";
+import { FUniver } from "@univerjs/facade";
 
 // univer
 const univer = new Univer({
@@ -46,3 +47,6 @@ univer.registerPlugin(UniverSheetsFormulaPlugin);
 
 // create univer sheet instance
 univer.createUniverSheet({});
+
+window.univer = univer;
+window.univerAPI = FUniver.newAPI(univer);

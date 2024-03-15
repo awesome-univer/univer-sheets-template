@@ -2,8 +2,14 @@ html,
 body {
   margin: 0;
   padding: 0;
-
   height: 100%;
+  overflow: hidden;
+}
+
+.demo {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 #app {

@@ -4,9 +4,21 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite + TS</title>
+    <script src="src/functions.ts"></script>
   </head>
   <body>
-    <div id="app"></div>
+    <div class="demo">
+        <div class="buttons">
+          <button onclick="setValue()">set A1 Value</button>
+          <button onclick="setValues()">set A1:B2 Values</button>
+          <button onclick="getValue()">get A1 Value</button>
+          <button onclick="getValues()">get A1:B2 Values</button>
+          <button onclick="getWorkbookData()">get Workbook Data</button>
+          <button onclick="getSheetData()">get Sheet1 Data</button>
+          <button onclick="createSheet()">create Sheet2</button>
+        </div>
+        <div id="app"></div>
+    </div>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
