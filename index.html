@@ -10,14 +10,17 @@
     <div class="demo">
         <div class="buttons">
           <button onclick="setValue()">set A1 Value</button>
+          <button onclick="setBackground()">set A1 background</button>
           <button onclick="setValues()">set A1:B2 Values</button>
           <button onclick="getValue()">get A1 Value</button>
           <button onclick="getValues()">get A1:B2 Values</button>
           <button onclick="getWorkbookData()">get Workbook Data</button>
           <button onclick="getSheetData()">get Sheet1 Data</button>
           <button onclick="createSheet()">create Sheet2</button>
-          <button onclick="scrollToCell()">scrollToB100</button>
-          <button onclick="setBackground()">setBackground</button>
+          <button onclick="scrollToCell()">scroll to B100</button>
+          <button onclick="scrollToTop()">scroll to Top</button>
+          <button onclick="scrollToBottom()">scroll to bottom</button>
+          <button onclick="commandsListenerSwitch(this)">Start listening commands</button>
         </div>
         <div id="app"></div>
     </div>

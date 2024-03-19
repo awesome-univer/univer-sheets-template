@@ -7,5 +7,8 @@ declare global  {
   interface Window {
     univer: Univer;
     univerAPI: FUniver;
+
+    // used by demo
+    commandListener: any;
   }
 }

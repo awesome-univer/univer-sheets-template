@@ -10,4 +10,7 @@ This template can help you get started with using the Univer API, and you can us
 - [x] get worksheet data
 - [x] create worksheet
 - [x] set cell background color
-- [x] scroll to cell
+- [x] scroll to cell B100
+- [x] scroll to top
+- [x] scroll to bottom
+- [x] listen commands
