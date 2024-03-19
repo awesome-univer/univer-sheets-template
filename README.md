@@ -14,4 +14,5 @@ This template can help you get started with using the Univer API, and you can us
 - [x] scroll to top
 - [x] scroll to bottom
 - [x] listen commands
-- [x] disable/enable edit
+- [x] disable / enable edit
+- [x] undo / redo

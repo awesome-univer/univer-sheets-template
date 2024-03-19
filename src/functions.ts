@@ -254,3 +254,17 @@ function editSwitch (el: HTMLElement) {
     alert('Editing is disabled, try to edit a cell to see the effect');
     el.innerHTML = 'enable edit';
 }
+
+function undo () {
+    const univerAPI = window.univerAPI;
+    if (!univerAPI) throw Error('univerAPI is not defined');
+
+    univerAPI.executeCommand('univer.command.undo');
+}
+
+function redo () {
+    const univerAPI = window.univerAPI;
+    if (!univerAPI) throw Error('univerAPI is not defined');
+
+    univerAPI.executeCommand('univer.command.redo');
+}
