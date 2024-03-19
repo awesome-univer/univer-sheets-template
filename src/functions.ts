@@ -208,14 +208,14 @@ function commandsListenerSwitch (el: HTMLElement) {
     if (el.tmpListener) {
         el.tmpListener.dispose();
         el.tmpListener = null;
-        el.innerHTML = 'Start listening commands';
+        el.innerHTML = 'start listening commands';
         return;
     }
 
     el.tmpListener = univerAPI.onCommandExecuted((command) => {
         console.log(command);
     });
-    el.innerHTML = 'Stop listening commands';
+    el.innerHTML = 'stop listening commands';
     alert('Press "Ctrl + Shift + I" to open the console and do some actions in the Univer Sheets, you will see the commands in the console.');
 }
 
@@ -225,7 +225,7 @@ function editSwitch (el: HTMLElement) {
 
     class DisableEditError extends Error {
         constructor () {
-            super('Editing is disabled');
+            super('editing is disabled');
             this.name = 'DisableEditError';
         }
     }
@@ -235,7 +235,7 @@ function editSwitch (el: HTMLElement) {
         window.removeEventListener('error', el.errListener);
         window.removeEventListener('unhandledrejection', el.errListener);
         el.tmpListener = null;
-        el.innerHTML = 'Disable edit';
+        el.innerHTML = 'disable edit';
         return;
     }
 
@@ -243,7 +243,7 @@ function editSwitch (el: HTMLElement) {
         const error = e instanceof PromiseRejectionEvent ? e.reason : e.error;
         if (error instanceof DisableEditError) {
             e.preventDefault();
-            console.warn('Editing is disabled');
+            console.warn('editing is disabled');
         }
     }
     window.addEventListener('error', el.errListener);
@@ -251,5 +251,6 @@ function editSwitch (el: HTMLElement) {
     el.tmpListener = univerAPI.onBeforeCommandExecute(() => {
         throw new DisableEditError();
     });
-    el.innerHTML = 'Enable edit';
+    alert('Editing is disabled, try to edit a cell to see the effect');
+    el.innerHTML = 'enable edit';
 }
