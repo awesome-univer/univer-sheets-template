@@ -138,3 +138,31 @@ function createSheet () {
     if (!sheet) throw Error('sheet is not defined');
     alert('Sheet created');
 }
+
+function scrollToCell () {
+    const univerAPI = window.univerAPI;
+    if (!univerAPI) throw Error('univerAPI is not defined');
+
+    const activeWorkbook = univerAPI.getActiveWorkbook();
+    if (!activeWorkbook) throw Error('activeWorkbook is not defined');
+
+    univerAPI.executeCommand('sheet.command.scroll-to-cell', {
+        range: {
+            startColumn: 1,
+            startRow: 99,
+        }
+    })
+}
+
+function setBackground () {
+    const univerAPI = window.univerAPI;
+    if (!univerAPI) throw Error('univerAPI is not defined');
+
+    const activeWorkbook = univerAPI.getActiveWorkbook();
+    if (!activeWorkbook) throw Error('activeWorkbook is not defined');
+    const activeSheet = activeWorkbook.getActiveSheet();
+    if (!activeSheet) throw Error('activeSheet is not defined');
+  
+    const range = activeSheet.getRange(0, 0, 1, 1);
+    range?.setBackgroundColor('red');
+}

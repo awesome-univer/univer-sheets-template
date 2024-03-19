@@ -9,3 +9,5 @@ This template can help you get started with using the Univer API, and you can us
 - [x] get workbook data
 - [x] get worksheet data
 - [x] create worksheet
+- [x] set cell background color
+- [x] scroll to cell
