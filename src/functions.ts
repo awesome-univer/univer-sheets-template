@@ -268,3 +268,45 @@ function redo () {
 
     univerAPI.executeCommand('univer.command.redo');
 }
+
+
+function setSelection () {
+
+    const univerAPI = window.univerAPI;
+    if (!univerAPI) throw Error('univerAPI is not defined');
+    const activeWorkbook = univerAPI.getActiveWorkbook();
+    if (!activeWorkbook) throw Error('activeWorkbook is not defined');
+    const activeSheet = activeWorkbook.getActiveSheet();
+    if (!activeSheet) throw Error('activeSheet is not defined');
+
+    // @ts-expect-error
+    const subUnitId = activeSheet._worksheet.getSheetId();
+
+    univerAPI.executeCommand('sheet.operation.set-selections', {
+        selections: [{
+            range: {
+                startRow: 0,
+                startColumn: 0,
+                endRow: 0,
+                endColumn: 0,
+                rangeType: 0
+            },
+        }],
+        subUnitId: subUnitId,
+        unitId: activeWorkbook.getId(),
+        type: 2,
+    });
+}
+
+function removeStyles () {
+    const univerAPI = window.univerAPI;
+    if (!univerAPI) throw Error('univerAPI is not defined');
+
+    const activeWorkbook = univerAPI.getActiveWorkbook();
+    if (!activeWorkbook) throw Error('activeWorkbook is not defined');
+    const activeSheet = activeWorkbook.getActiveSheet();
+    if (!activeSheet) throw Error('activeSheet is not defined');
+    setSelection();
+
+    univerAPI.executeCommand('sheet.command.clear-selection-format');
+}

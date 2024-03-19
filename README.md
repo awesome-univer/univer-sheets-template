@@ -16,3 +16,4 @@ This template can help you get started with using the Univer API, and you can us
 - [x] listen commands
 - [x] disable / enable edit
 - [x] undo / redo
+- [x] select A1
